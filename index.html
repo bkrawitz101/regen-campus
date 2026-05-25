@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3SUNS Regen Campus OS - Sci-Fi Console POC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regen: {
+                            bg: '#07111c',
+                            panel: '#0d1b2a',
+                            panel2: '#10253a',
+                            line: '#24415f',
+                            cyan: '#4de1ff',
+                            lime: '#b7ff6a',
+                            amber: '#ffcc66',
+                            red: '#ff6b7a',
+                            text: '#e8f3ff',
+                            muted: '#89a9c7'
+                        }
+                    },
+                    boxShadow: {
+                        neon: '0 0 0 1px rgba(77,225,255,0.18), 0 0 24px rgba(77,225,255,0.12)',
+                        glow: '0 0 24px rgba(77,225,255,0.18)'
+                    },
+                    backgroundImage: {
+                        grid: 'linear-gradient(rgba(77,225,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(77,225,255,0.07) 1px, transparent 1px)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #07111c; }
+        ::-webkit-scrollbar-thumb { background: #24415f; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4de1ff; }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(77,225,255,0.06) 50%, rgba(255,255,255,0) 100%);
+            background-size: 100% 4px;
+        }
+    </style>
+</head>
+<body class="bg-regen-bg text-regen-text font-sans h-screen overflow-hidden scanline">
+    <div class="h-full flex">
+        <aside class="w-72 bg-regen-panel border-r border-regen-line flex flex-col hidden xl:flex">
+            <div class="h-16 flex items-center px-6 border-b border-regen-line bg-black/20">
+                <div class="h-9 w-9 rounded-md bg-gradient-to-br from-regen-cyan to-regen-lime shadow-glow mr-3"></div>
+                <div>
+                    <div class="text-xs tracking-[0.3em] text-regen-muted uppercase">Regen Campus</div>
+                    <div class="font-bold text-lg">3SUNS OS</div>
+                </div>
+            </div>
+            <div class="px-4 py-4">
+                <div class="bg-regen-panel2 rounded-xl border border-regen-line p-3 shadow-neon mb-4">
+                    <div class="text-[11px] uppercase tracking-[0.25em] text-regen-muted mb-2">Live campus signal</div>
+                    <div class="flex items-center justify-between mb-2"><span class="text-sm">Water</span><span class="text-regen-cyan font-bold">92%</span></div>
+                    <div class="h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full w-[92%] bg-gradient-to-r from-regen-cyan to-regen-lime"></div></div>
+                    <div class="mt-3 grid grid-cols-3 gap-2 text-[10px] text-regen-muted">
+                        <div class="p-2 rounded bg-black/20 border border-regen-line">Soil 81%</div>
+                        <div class="p-2 rounded bg-black/20 border border-regen-line">Power 74%</div>
+                        <div class="p-2 rounded bg-black/20 border border-regen-line">Flow 66%</div>
+                    </div>
+                </div>
+                <nav class="space-y-1">
+                    <a class="flex items-center px-3 py-2.5 rounded-lg bg-white/8 border border-regen-line text-white shadow-neon" href="index.html"><i class="fa-solid fa-house w-5 mr-3 text-regen-cyan"></i> Home</a>
+                    <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="community.html"><i class="fa-solid fa-users w-5 mr-3"></i> Community</a>
+                    <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="projects.html"><i class="fa-solid fa-seedling w-5 mr-3"></i> Projects</a>
+                    <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="digital_twin.html"><i class="fa-solid fa-cube w-5 mr-3"></i> Twin</a>
+                    <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="#"><i class="fa-solid fa-store w-5 mr-3"></i> Marketplace</a>
+                    <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="#"><i class="fa-regular fa-calendar w-5 mr-3"></i> Calendar</a>
+                    <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="#"><i class="fa-solid fa-folder w-5 mr-3"></i> Files</a>
+                </nav>
+            </div>
+        </aside>
+        <div class="flex-1 flex flex-col min-w-0">
+            <header class="h-16 border-b border-regen-line bg-regen-panel/90 backdrop-blur flex items-center px-4 md:px-6 justify-between">
+                <div class="flex items-center gap-3">
+                    <button class="xl:hidden p-2 rounded-md border border-regen-line bg-black/20"><i class="fa-solid fa-bars"></i></button>
+                    <div class="hidden md:block">
+                        <div class="text-[11px] uppercase tracking-[0.3em] text-regen-muted">3SUNS / Nevada City / Live Console</div>
+                        <div class="text-sm text-regen-cyan">Monitoring regenerative operations across connected campuses</div>
+                    </div>
+                </div>
+                <div class="flex-1 max-w-2xl mx-4 hidden lg:block">
+                    <div class="relative"><i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-regen-muted"></i><input class="w-full pl-10 pr-4 py-2 rounded-full bg-black/30 border border-regen-line text-sm outline-none focus:border-regen-cyan" placeholder="Search signals, projects, people, docs..."></div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="px-3 py-1.5 rounded-full border border-regen-line bg-black/20 text-xs text-regen-lime"><span class="inline-block h-2 w-2 rounded-full bg-regen-lime mr-2 animate-pulse"></span>LIVE</div>
+                    <button class="p-2 rounded-md border border-regen-line bg-black/20"><i class="fa-regular fa-bell text-regen-cyan"></i></button>
+                    <div class="h-9 w-9 rounded-full bg-gradient-to-br from-regen-cyan to-regen-amber flex items-center justify-center font-bold text-black">3S</div>
+                </div>
+            </header>
+            <main class="flex-1 overflow-y-auto p-4 md:p-6">
+                <div class="grid grid-cols-12 gap-4">
+                    <section class="col-span-12 xl:col-span-8 space-y-4">
+                        <div class="rounded-2xl border border-regen-line bg-gradient-to-br from-regen-panel to-black/20 shadow-neon overflow-hidden">
+                            <div class="px-5 py-4 border-b border-regen-line flex items-center justify-between">
+                                <div>
+                                    <div class="text-[11px] uppercase tracking-[0.25em] text-regen-muted">Campus Overview</div>
+                                    <h1 class="text-2xl font-bold">3SUNS Regen Campus</h1>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="px-3 py-2 rounded-lg border border-regen-line bg-black/20 text-sm hover:border-regen-cyan">Enter Twin</button>
+                                    <button class="px-3 py-2 rounded-lg bg-regen-cyan text-black text-sm font-bold">Create Signal</button>
+                                </div>
+                            </div>
+                            <div class="p-5 grid md:grid-cols-3 gap-4">
+                                <div class="md:col-span-2 rounded-2xl border border-regen-line bg-[radial-gradient(circle_at_top,rgba(77,225,255,0.16),rgba(13,27,42,0.9))] p-5 min-h-[260px] relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-grid opacity-20 bg-[size:24px_24px]"></div>
+                                    <div class="relative z-10 h-full flex flex-col justify-between">
+                                        <div class="flex items-center justify-between">
+                                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/30 border border-regen-line text-xs text-regen-muted"><span class="h-2 w-2 rounded-full bg-regen-lime animate-pulse"></span> Synchronized dashboard + story layer</div>
+                                            <div class="text-xs text-regen-muted">Bioregion: Sierra foothills</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-regen-muted text-sm mb-2">Now playing: campus activity stream</div>
+                                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                                <div class="rounded-xl border border-regen-line bg-black/30 p-3"><div class="text-xs text-regen-muted">Projects</div><div class="text-2xl font-bold text-regen-cyan">14</div></div>
+                                                <div class="rounded-xl border border-regen-line bg-black/30 p-3"><div class="text-xs text-regen-muted">Members</div><div class="text-2xl font-bold text-regen-lime">128</div></div>
+                                                <div class="rounded-xl border border-regen-line bg-black/30 p-3"><div class="text-xs text-regen-muted">Listings</div><div class="text-2xl font-bold text-regen-amber">5</div></div>
+                                                <div class="rounded-xl border border-regen-line bg-black/30 p-3"><div class="text-xs text-regen-muted">Events</div><div class="text-2xl font-bold text-white">8</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="rounded-2xl border border-regen-line bg-black/25 p-4 shadow-neon">
+                                        <div class="text-xs uppercase tracking-[0.2em] text-regen-muted mb-2">Signal Feed</div>
+                                        <div class="space-y-3 text-sm">
+                                            <div class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-regen-cyan"></span><div><div class="font-semibold">Water guild sync starting</div><div class="text-regen-muted text-xs">10:00 AM • Main Hub</div></div></div>
+                                            <div class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-regen-lime"></span><div><div class="font-semibold">Twin map updated</div><div class="text-regen-muted text-xs">3 new hotspots linked</div></div></div>
+                                            <div class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-regen-amber"></span><div><div class="font-semibold">Marketplace offer posted</div><div class="text-regen-muted text-xs">Tallow skincare batch ready</div></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-2xl border border-regen-line bg-black/25 p-4">
+                                        <div class="text-xs uppercase tracking-[0.2em] text-regen-muted mb-2">Quick Actions</div>
+                                        <div class="grid grid-cols-2 gap-2 text-sm">
+                                            <button class="rounded-lg border border-regen-line bg-white/5 py-2 hover:border-regen-cyan">New Project</button>
+                                            <button class="rounded-lg border border-regen-line bg-white/5 py-2 hover:border-regen-cyan">Post Update</button>
+                                            <button class="rounded-lg border border-regen-line bg-white/5 py-2 hover:border-regen-cyan">Add Event</button>
+                                            <button class="rounded-lg border border-regen-line bg-white/5 py-2 hover:border-regen-cyan">Open Map</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                                <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Active Projects</h2><span class="text-xs text-regen-muted">live now</span></div>
+                                <div class="space-y-3">
+                                    <div class="rounded-xl border border-regen-line bg-black/20 p-3 hover:border-regen-cyan">
+                                        <div class="flex items-center justify-between"><div class="font-semibold">Black Soldier Fly Compost Hub</div><div class="text-xs text-regen-lime">74% done</div></div>
+                                        <div class="text-xs text-regen-muted mt-1">Soil guild / circular value loop</div>
+                                    </div>
+                                    <div class="rounded-xl border border-regen-line bg-black/20 p-3 hover:border-regen-cyan">
+                                        <div class="flex items-center justify-between"><div class="font-semibold">IoT Water Monitoring Twin</div><div class="text-xs text-regen-cyan">beta</div></div>
+                                        <div class="text-xs text-regen-muted mt-1">Sensors → dashboard → story layer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                                <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Marketplace & Exchange</h2><span class="text-xs text-regen-muted">latest</span></div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><div><div class="font-semibold">Local Tallow Skincare</div><div class="text-xs text-regen-muted">Health guild</div></div><div class="text-regen-amber font-bold">Exchange</div></div>
+                                    <div class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><div><div class="font-semibold">Solar Repair Service</div><div class="text-xs text-regen-muted">Clean Power guild</div></div><div class="text-regen-cyan font-bold">$50/hr</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <aside class="col-span-12 xl:col-span-4 space-y-4">
+                        <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                            <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Live Campus Console</h2><span class="text-xs text-regen-lime">SYNCED</span></div>
+                            <div class="space-y-3">
+                                <div class="rounded-xl bg-black/20 border border-regen-line p-3"><div class="text-xs text-regen-muted uppercase">Guild pulse</div><div class="mt-2 h-24 rounded-lg bg-[radial-gradient(circle_at_center,rgba(77,225,255,0.22),rgba(0,0,0,0.2))] border border-regen-line relative overflow-hidden"><div class="absolute inset-x-0 top-1/2 h-px bg-regen-cyan/50"></div></div></div>
+                                <div class="grid grid-cols-3 gap-2 text-xs"><div class="rounded-lg border border-regen-line bg-black/20 p-2 text-center"><div class="text-regen-muted">Soil</div><div class="text-regen-lime font-bold">81%</div></div><div class="rounded-lg border border-regen-line bg-black/20 p-2 text-center"><div class="text-regen-muted">Power</div><div class="text-regen-cyan font-bold">74%</div></div><div class="rounded-lg border border-regen-line bg-black/20 p-2 text-center"><div class="text-regen-muted">Flow</div><div class="text-regen-amber font-bold">66%</div></div></div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                            <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Campus Rhythm</h2><i class="fa-regular fa-calendar text-regen-cyan"></i></div>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex gap-3"><div class="w-14 rounded-lg border border-regen-line bg-black/20 p-2 text-center"><div class="text-[10px] text-regen-muted">MAY</div><div class="text-lg font-bold">26</div></div><div><div class="font-semibold">Guild Sync: Water Systems</div><div class="text-xs text-regen-muted">10:00 AM • Main Hub & VR</div></div></div>
+                                <div class="flex gap-3"><div class="w-14 rounded-lg border border-regen-line bg-black/20 p-2 text-center"><div class="text-[10px] text-regen-muted">MAY</div><div class="text-lg font-bold">28</div></div><div><div class="font-semibold">Community Tallow Workshop</div><div class="text-xs text-regen-muted">2:00 PM • Kitchen Space</div></div></div>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                            <h2 class="font-bold mb-3">Public Front Door</h2>
+                            <div class="rounded-xl border border-regen-line bg-black/20 p-3 text-sm text-regen-muted">This campus is a living lab, think-and-do tank, and network node. Projects, people, and places link together here.</div>
+                            <button class="mt-3 w-full rounded-lg bg-regen-cyan text-black font-bold py-2">Open Showcase</button>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

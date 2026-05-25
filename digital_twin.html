@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3SUNS Regen Campus OS - Twin with Website Elements</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    tailwind.config = { theme: { extend: { colors: { regen: { bg:'#07111c', panel:'#0d1b2a', panel2:'#10253a', line:'#24415f', cyan:'#4de1ff', lime:'#b7ff6a', amber:'#ffcc66', red:'#ff6b7a', text:'#e8f3ff', muted:'#89a9c7' } }, boxShadow: { neon:'0 0 0 1px rgba(77,225,255,0.18), 0 0 24px rgba(77,225,255,0.12)' }, backgroundImage: { grid:'linear-gradient(rgba(77,225,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(77,225,255,0.07) 1px, transparent 1px)' } } } };
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #07111c; }
+    ::-webkit-scrollbar-thumb { background: #24415f; border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4de1ff; }
+    .scanline { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(77,225,255,0.06) 50%, rgba(255,255,255,0) 100%); background-size: 100% 4px; }
+    model-viewer { width: 100%; height: 100%; min-height: 460px; background: radial-gradient(circle at center, rgba(77,225,255,0.08), rgba(0,0,0,0.25)); }
+  </style>
+</head>
+<body class="bg-regen-bg text-regen-text font-sans h-screen overflow-hidden scanline">
+<div class="h-full flex">
+  <aside class="w-72 bg-regen-panel border-r border-regen-line flex flex-col hidden xl:flex">
+    <div class="h-16 flex items-center px-6 border-b border-regen-line bg-black/20">
+      <div class="h-9 w-9 rounded-md bg-gradient-to-br from-regen-cyan to-regen-lime shadow-glow mr-3"></div>
+      <div>
+        <div class="text-xs tracking-[0.3em] text-regen-muted uppercase">Regen Campus</div>
+        <div class="font-bold text-lg">3SUNS OS</div>
+      </div>
+    </div>
+    <div class="px-4 py-4">
+      <div class="bg-regen-panel2 rounded-xl border border-regen-line p-3 shadow-neon mb-4">
+        <div class="text-[11px] uppercase tracking-[0.25em] text-regen-muted mb-2">Twin status</div>
+        <div class="flex items-center justify-between mb-2"><span class="text-sm">Connected nodes</span><span class="text-regen-lime font-bold">18</span></div>
+        <div class="grid grid-cols-3 gap-2 text-[10px] text-regen-muted">
+          <div class="p-2 rounded bg-black/20 border border-regen-line">Sensors 12</div><div class="p-2 rounded bg-black/20 border border-regen-line">Feeds 6</div><div class="p-2 rounded bg-black/20 border border-regen-line">Alerts 1</div>
+        </div>
+      </div>
+      <nav class="space-y-1">
+        <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="index.html"><i class="fa-solid fa-house w-5 mr-3"></i> Home</a>
+        <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="community.html"><i class="fa-solid fa-users w-5 mr-3"></i> Community</a>
+        <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="projects.html"><i class="fa-solid fa-seedling w-5 mr-3"></i> Projects</a>
+        <a class="flex items-center px-3 py-2.5 rounded-lg bg-white/8 border border-regen-line text-white shadow-neon" href="digital_twin.html"><i class="fa-solid fa-cube w-5 mr-3 text-regen-cyan"></i> Twin</a>
+        <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="#"><i class="fa-solid fa-store w-5 mr-3"></i> Marketplace</a>
+        <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="#"><i class="fa-regular fa-calendar w-5 mr-3"></i> Calendar</a>
+        <a class="flex items-center px-3 py-2.5 rounded-lg hover:bg-white/6 border border-transparent hover:border-regen-line text-regen-muted hover:text-white" href="#"><i class="fa-solid fa-folder w-5 mr-3"></i> Files</a>
+      </nav>
+    </div>
+  </aside>
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="h-16 border-b border-regen-line bg-regen-panel/90 backdrop-blur flex items-center px-4 md:px-6 justify-between">
+      <div class="flex items-center gap-3">
+        <button class="xl:hidden p-2 rounded-md border border-regen-line bg-black/20"><i class="fa-solid fa-bars"></i></button>
+        <div>
+          <div class="text-[11px] uppercase tracking-[0.3em] text-regen-muted">3SUNS / Twin / Live Console</div>
+          <div class="text-sm text-regen-cyan">Spatial model, sensor feeds, and predictive overlays</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="px-3 py-1.5 rounded-full border border-regen-line bg-black/20 text-xs text-regen-lime"><span class="inline-block h-2 w-2 rounded-full bg-regen-lime mr-2 animate-pulse"></span>LIVE</div>
+        <button class="px-3 py-2 rounded-lg border border-regen-line bg-black/20 text-sm">Export</button>
+        <button id="open-vr-btn" class="px-3 py-2 rounded-lg bg-regen-cyan text-black text-sm font-bold">Open VR</button>
+      </div>
+    </header>
+    <main class="flex-1 overflow-hidden">
+      <div class="grid grid-cols-12 h-full">
+        <section class="col-span-12 xl:col-span-8 flex flex-col border-r border-regen-line">
+          <div class="p-4 border-b border-regen-line bg-regen-panel">
+            <div class="flex flex-wrap gap-2">
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Satellite</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Topo</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Water</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Soil</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Energy</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Buildings</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">People</button>
+              <button class="px-3 py-2 rounded-lg bg-white/8 border border-regen-line text-sm">Projects</button>
+            </div>
+          </div>
+          <div class="flex-1 grid lg:grid-cols-3 gap-4 p-4 overflow-hidden">
+            <div class="lg:col-span-2 rounded-2xl border border-regen-line bg-regen-panel shadow-neon overflow-hidden relative">
+              <div class="absolute top-3 left-3 z-10 px-3 py-1 rounded-full bg-black/50 border border-regen-line text-xs text-regen-cyan">Interactive Property Model</div>
+              <model-viewer id="main-model-viewer" src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="3SUNS campus 3D model" camera-controls auto-rotate shadow-intensity="1" exposure="1.05" ar ar-modes="webxr scene-viewer quick-look" style="width:100%;height:100%;min-height:460px;"></model-viewer>
+              <div class="absolute bottom-3 left-3 right-3 z-10 grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div class="rounded-xl border border-regen-line bg-black/65 p-3"><div class="text-xs text-regen-muted">Water flow</div><div class="text-lg font-bold text-regen-cyan">92%</div></div>
+                <div class="rounded-xl border border-regen-line bg-black/65 p-3"><div class="text-xs text-regen-muted">Soil moisture</div><div class="text-lg font-bold text-regen-lime">68%</div></div>
+                <div class="rounded-xl border border-regen-line bg-black/65 p-3"><div class="text-xs text-regen-muted">Solar output</div><div class="text-lg font-bold text-regen-amber">74%</div></div>
+                <div class="rounded-xl border border-regen-line bg-black/65 p-3"><div class="text-xs text-regen-muted">Occupancy</div><div class="text-lg font-bold text-white">31</div></div>
+              </div>
+            </div>
+            <div class="space-y-4 overflow-y-auto pr-1">
+              <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Live Sensor Feeds</h2><span class="text-xs text-regen-muted">real time</span></div>
+                <div class="space-y-3">
+                  <div><div class="flex justify-between text-xs mb-1"><span class="text-regen-muted">Water reservoir</span><span>92%</span></div><div class="h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full w-[92%] bg-regen-cyan"></div></div></div>
+                  <div><div class="flex justify-between text-xs mb-1"><span class="text-regen-muted">Soil moisture</span><span>68%</span></div><div class="h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full w-[68%] bg-regen-lime"></div></div></div>
+                  <div><div class="flex justify-between text-xs mb-1"><span class="text-regen-muted">Air quality</span><span>88%</span></div><div class="h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full w-[88%] bg-regen-amber"></div></div></div>
+                  <div><div class="flex justify-between text-xs mb-1"><span class="text-regen-muted">Battery bank</span><span>74%</span></div><div class="h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full w-[74%] bg-white"></div></div></div>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Predictive Modeling</h2><span class="text-xs text-regen-muted">72h forecast</span></div>
+                <div class="space-y-3 text-sm">
+                  <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Water demand will peak</div><div class="text-xs text-regen-muted mt-1">Tomorrow 2–5 PM • Suggest irrigation window shift</div></div>
+                  <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Compost heat cycle stable</div><div class="text-xs text-regen-muted mt-1">No intervention required for 48 hours</div></div>
+                  <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Solar reserve may dip</div><div class="text-xs text-regen-muted mt-1">Cloud cover expected • load shifting recommended</div></div>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-regen-line bg-regen-panel p-4 shadow-neon">
+                <div class="flex items-center justify-between mb-3"><h2 class="font-bold">Alert Stream</h2><span class="text-xs text-regen-muted">1 unresolved</span></div>
+                <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold text-regen-red">North irrigation valve anomaly</div><div class="text-xs text-regen-muted mt-1">Detected 8 minutes ago • Assigned to Water Guild</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="col-span-12 xl:col-span-4 bg-regen-panel overflow-y-auto">
+          <div class="p-4 border-b border-regen-line">
+            <div class="text-xs uppercase tracking-[0.25em] text-regen-muted mb-2">Model Layers</div>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><span>Water network</span><input type="checkbox" checked class="accent-cyan-400"></label>
+              <label class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><span>Soil zones</span><input type="checkbox" checked class="accent-cyan-400"></label>
+              <label class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><span>Energy system</span><input type="checkbox" checked class="accent-cyan-400"></label>
+              <label class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><span>Buildings</span><input type="checkbox" checked class="accent-cyan-400"></label>
+              <label class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><span>People & activity</span><input type="checkbox" checked class="accent-cyan-400"></label>
+              <label class="flex items-center justify-between rounded-xl border border-regen-line bg-black/20 p-3"><span>Project pins</span><input type="checkbox" checked class="accent-cyan-400"></label>
+            </div>
+          </div>
+          <div class="p-4 border-b border-regen-line">
+            <div class="text-xs uppercase tracking-[0.25em] text-regen-muted mb-2">Property Nodes</div>
+            <div class="space-y-3 text-sm">
+              <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Main Hub</div><div class="text-xs text-regen-muted mt-1">Community, events, and operations</div></div>
+              <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Water Garden</div><div class="text-xs text-regen-muted mt-1">Irrigation, retention, and monitoring</div></div>
+              <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Compost Bay</div><div class="text-xs text-regen-muted mt-1">Black soldier fly loop and soil inputs</div></div>
+              <div class="rounded-xl border border-regen-line bg-black/20 p-3"><div class="font-semibold">Solar Shed</div><div class="text-xs text-regen-muted mt-1">Battery bank and power routing</div></div>
+            </div>
+          </div>
+          <div class="p-4 border-b border-regen-line">
+            <div class="text-xs uppercase tracking-[0.25em] text-regen-muted mb-2">Story Overlay</div>
+            <div class="rounded-2xl border border-regen-line bg-black/20 p-4 text-sm text-regen-text/90 leading-6">This virtual model can become a public-facing story space, a planning tool, and a live operations layer. In later versions, each node can open photos, documents, sensor history, and a VR doorway into the campus.</div>
+          </div>
+          <div class="p-4">
+            <div class="text-xs uppercase tracking-[0.25em] text-regen-muted mb-2">Sample Model Viewer</div>
+            <div class="rounded-2xl border border-regen-line bg-black/20 overflow-hidden shadow-neon">
+              <div class="px-3 py-2 border-b border-regen-line flex items-center justify-between text-xs text-regen-muted"><span>Google model-viewer</span><span>drag / zoom / AR-ready</span></div>
+              <div class="h-[280px]"><model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="3SUNS campus model" camera-controls auto-rotate shadow-intensity="1" exposure="1.05" ar ar-modes="webxr scene-viewer quick-look" style="width:100%;height:100%;"></model-viewer></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Desktop Fullscreen 3D Modal -->
+<div id="vr-modal" class="fixed inset-0 z-50 hidden bg-black/95 flex flex-col backdrop-blur-sm">
+  <div class="flex items-center justify-between p-4 border-b border-regen-line bg-regen-panel/80">
+    <div class="text-regen-cyan font-bold tracking-widest uppercase text-sm"><i class="fa-solid fa-cube mr-2"></i> Expanded 3D View</div>
+    <button id="close-vr-btn" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-sm font-bold border border-regen-line transition-colors"><i class="fa-solid fa-xmark mr-2"></i>Close</button>
+  </div>
+  <div class="flex-1 w-full h-full relative">
+    <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="3SUNS campus 3D model" camera-controls auto-rotate shadow-intensity="1" exposure="1.05" ar ar-modes="webxr scene-viewer quick-look" style="width:100%;height:100%;"></model-viewer>
+  </div>
+</div>
+
+<script>
+  const vrModal = document.getElementById('vr-modal');
+  
+  document.getElementById('open-vr-btn').addEventListener('click', () => {
+    vrModal.classList.remove('hidden');
+  });
+  
+  document.getElementById('close-vr-btn').addEventListener('click', () => {
+    vrModal.classList.add('hidden');
+  });
+</script>
+</body>
+</html>
